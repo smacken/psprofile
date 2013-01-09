@@ -24,4 +24,5 @@ if((test-path "C:\Users\$env:username\My Documents\WindowsPowerShell") -ne $true
     mkdir "C:\Users\$env:username\My Documents\WindowsPowerShell"
 }
 
-cp -path . -destination "C:\Users\$env:username\My Documents\WindowsPowerShell" -force
+write-host "Copying PS profile"
+cp -path .\* -destination "C:\Users\$env:username\My Documents\WindowsPowerShell" -force
