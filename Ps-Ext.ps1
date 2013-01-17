@@ -33,3 +33,21 @@ function Find-InPath($fileName){
 		}
 	}
 }
+
+# Checks if a program exists on the command line
+# i.e node, coffee, grunt
+# Usage:
+# if( -not (program-exists $program)){
+#    "You had better go get it"
+# }
+function Program-Exists($prog){
+	try{
+	    & $prog --version
+	}
+	catch [System.Management.Automation.ItemNotFoundException]{
+	    return $false;
+	}
+	catch {
+	    return $false;
+	}
+}
